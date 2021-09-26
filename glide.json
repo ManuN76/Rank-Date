@@ -1,0 +1,28 @@
+{
+  "kind": "column",
+  "name": "Rank Sorted Array",
+  "description": "Ranks a sorted array",
+  "author": "Manu.n",
+  "params": [
+    {
+      "name": "array",
+      "displayName": "Array",
+      "type": { "kind": "array", "items": "date-time" }
+    },
+    {
+      "name": "rankItem",
+      "displayName": "Rank Item",
+      "type": "date-time"
+    },
+    {
+      "name": "sort",
+      "displayName": "Order 1:Descending 0:Ascending (par default)",
+      "type": "boolean"
+    }
+  ],
+  "result": {
+    "name": "rank",
+    "displayName": "Rank",
+    "type": "number"
+  }
+}
