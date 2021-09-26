@@ -1,7 +1,7 @@
 {
   "kind": "column",
-  "name": "Rank Sorted Array",
-  "description": "Ranks a sorted array",
+  "name": "Rank Date",
+  "description": "Ranks a sorted array or joined list",
   "author": "Manu.n",
   "params": [
     {
@@ -10,13 +10,33 @@
       "type": { "kind": "array", "items": "date-time" }
     },
     {
+      "name": "format",
+      "displayName": "Array Format : short (default), medium, long",
+      "type": "string"
+    },
+    {
+      "name": "jl",
+      "displayName": "Joined List",
+      "type": "string"
+    },
+    {
+      "name": "sep",
+      "displayName": "Separator ('|' default)",
+      "type": "string"
+    },
+    {
       "name": "rankItem",
       "displayName": "Rank Item",
       "type": "date-time"
     },
     {
+      "name": "dateonly",
+      "displayName": "Date Only 1:Enabled 0:Disabled (default)",
+      "type": "boolean"
+    },
+    {
       "name": "sort",
-      "displayName": "Order 1:Descending 0:Ascending (par default)",
+      "displayName": "Order 1:Descending 0:Ascending (default)",
       "type": "boolean"
     }
   ],

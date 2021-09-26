@@ -1,13 +1,34 @@
-window.function = function (arr, rankItem, des) {
-  if (arr == undefined) return undefined;
+window.function = function (arr, format, jl, sep, rankItem, dateonly, des) {
+  if (arr == undefined && jl == undefined) return undefined;
   if (rankItem == undefined) return undefined;
+
+  format = format.value ?? "short";
+  jl = jl.value ?? "";
+  sep = sep.value ?? "|";
+  dateonly = dateonly.value ?? 0;
   des = des.value ?? 0;
 
+  // Rank Item
   let rkItem = rankItem.value ?? "";
   rkItem = glide2Date(rkItem, "short");
+  if (dateonly) {
+    rkItem = new Date(rkItem.toDateString());
+  }
 
-  let sorted = glide2Date([...arr.value], "short");
+  // Array
+  if (arr != undefined) {
+    arr = [...arr.value];
+  } else {
+    arr = jl.split(sep);
+  }
+  let sorted = glide2Date(arr, format);
+  if (dateonly) {
+    sorted = sorted.map(function (item) {
+      return new Date(item.toDateString());
+    });
+  }
 
+  // Sort
   if (des) {
     // Sort Descending
     sorted.sort((a, b) => b - a);
